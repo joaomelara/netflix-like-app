@@ -1,0 +1,14 @@
+<section id="tasks">
+    <header>
+        <h2>{{name}} Movies</h2>
+ 
+    </header>
+    <ul>
+         @for(movie of selectedCategoryMovies; track movie.id){
+        <li>
+           
+            <app-movie [movie]="movie"></app-movie>
+        </li>
+    }
+    </ul>
+</section>

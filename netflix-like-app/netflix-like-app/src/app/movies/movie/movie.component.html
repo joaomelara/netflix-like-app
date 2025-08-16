@@ -1,0 +1,15 @@
+@if (isMovieInfo) {
+    <app-movie-info [movie]="movie" (cancel)="onCancelMovie()" />
+}
+
+<article>
+    <h2>{{movie.title}}</h2>
+    <time>
+        {{movie.summary}}
+    </time>
+    <p>
+        {{movie.releaseDate}}
+    </p>
+    <p class="actions">
+        <button (click)="onStartMovie()" class="btn btn-primary">Watch</button>
+</article>

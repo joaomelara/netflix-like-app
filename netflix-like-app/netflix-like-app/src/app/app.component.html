@@ -1,0 +1,24 @@
+<app-header/>
+
+<main>
+    <ul id="users">
+
+        @for (category of categories; track category.id){
+        <li>
+            <app-categories 
+            [category]="category"
+            (select)="onSelectCategory($event)"
+            [selected]="category.id === selectedCategoryId"/>
+        </li>
+        }
+    </ul>
+
+    @if (selectedCategory) {
+        <app-movies [id]="selectedCategory.id" [name]="selectedCategory.name"></app-movies>
+
+    }@else {
+        <p id="fallback">Select a category to see the movies</p>
+    }
+    
+
+</main>

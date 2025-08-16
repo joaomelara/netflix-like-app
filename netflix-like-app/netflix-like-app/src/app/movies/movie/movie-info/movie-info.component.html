@@ -1,0 +1,17 @@
+<div class="backdrop"></div>
+<dialog open>
+  <h2>{{ movie.title }}</h2>
+  @if (movie.trailerUrl) {
+    <iframe
+      width="320"
+      height="240"
+      [src]="movie.trailerUrl | safeUrl"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  }
+
+<p class="actions">
+      <button type="button" (click)="onCancel()">Cancel</button>
+  </p>
+</dialog>
